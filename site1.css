@@ -1,0 +1,33 @@
+p{
+    color:rgba(70, 25, 11, 0.895);
+    font-size: 18px;
+    font-family: 'monospace';
+}
+h1 { 
+    font-family: 'segoe print';
+    font-style: italic;
+    font-size: 31px;
+  }
+span{
+    color: rgba(135, 43, 14, 0.895);
+}
+body{
+    background-color:rgb(248, 238, 219);
+}
+img{
+    border: 2px solid #331306;
+    width: 600px;
+    height: 400px;
+    margin-right: 100px;
+}
+p1, p2, p3, p4{
+    color:rgba(30, 10, 4, 0.895);
+    font-size: 20px;
+    font-family: 'monospace';
+}
+l1, l2, l3{
+    color:rgba(41, 22, 3, 0.895);
+    font-size: 20px;
+    font-family: 'monospace';
+}
+
