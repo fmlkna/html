@@ -1,33 +1,50 @@
-p{
-    color:rgba(70, 25, 11, 0.895);
-    font-size: 18px;
-    font-family: 'monospace';
-}
-h1 { 
-    font-family: 'segoe print';
-    font-style: italic;
-    font-size: 31px;
-  }
-span{
-    color: rgba(135, 43, 14, 0.895);
-}
-body{
-    background-color:rgb(248, 238, 219);
-}
-img{
-    border: 2px solid #331306;
-    width: 600px;
-    height: 400px;
-    margin-right: 100px;
-}
-p1, p2, p3, p4{
-    color:rgba(30, 10, 4, 0.895);
-    font-size: 20px;
-    font-family: 'monospace';
-}
-l1, l2, l3{
-    color:rgba(41, 22, 3, 0.895);
-    font-size: 20px;
-    font-family: 'monospace';
+@import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
+
+body {
+    font-family: 'Verdana'; 
+    background-color: rgb(248, 238, 219); 
+    color: rgba(70, 25, 11, 0.895);
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 1.6; /* межстрочный интервал */
+    text-align: left; /* выравнивание текста */
 }
 
+h1 {  
+    font-style: italic; /* Курсив */
+    font-size: 31px; 
+    font-weight: 700; /* Жирность */
+    text-align: center; 
+}
+span {
+    color: #d38c1b;
+}
+p, li {
+    margin-bottom: 1em; /* Отступы между элементами */
+}
+
+a {
+    color: #340202; /* Цвет ссылки */
+    text-decoration: none; /* подчеркивание */
+}
+
+a:hover {
+    color: #b53711; /* Цвет ссылки при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+img {
+    border: 2px solid #331306; 
+    border-radius: 10px; 
+    width: 600px; 
+    height: 400px; 
+    margin-right: 100px; /* Отступ */
+}
+
+.sp {
+    color: #cb703b; 
+    background-color: #f7e8c8; 
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ecb576; /* Граница */
+    border-radius: 5px; 
+}
