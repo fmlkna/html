@@ -1,68 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
-
-*{
+* {
     box-sizing: border-box;
-    position: relative; /* Позволяет избежать наложения элементов друг на друга и сдвигает их при изменении размера экрана*/
 }
 
 body {
-    font-family: 'Verdana';
-    background-color: rgb(248, 238, 219);
-    color: rgba(70, 25, 11, 0.895);
-    font-size: 18px;
+    font-family: 'Verdana', sans-serif;
+    background-color: rgb(248, 238, 219); 
+    color: rgba(70, 25, 11, 0.895); 
+    font-size: 1rem; /* Относительные единицы для текста */
     font-weight: 400;
-    line-height: 1.6; /* межстрочный интервал */
-    text-align: justify; /* выравнивание текста по ширине */
-    width: auto; /* Ширина на всю страницу */
-    height: auto; /* заполнение всей высоты видимого экрана */
-    overflow-x: hidden; /* Убирается горизонтальный скролл */
+    line-height: 1.6; /* Межстрочный интервал */
+    text-align: justify; /* Выравнивание текста по ширине */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    margin: 10px;
 }
 
 h1 {
     font-style: italic; /* Курсив */
-    font-size: 31px;
+    font-size: 1.9375rem; /* 31px в относительных единицах */
     font-weight: 700; /* Жирность */
     text-align: center;
-    max-width: 100%; /*текстовое поле на весь экран по ширине */
 }
 
 span {
-    color: #d38c1b;
+    color: #d38c1b; /* Шестнадцатеричный цвет */
 }
 
 p, li {
-    margin-bottom: 1em; /* Отступы между элементами */
-    max-width: 100%; /* Ограничение ширины для элементов текста */
+    margin-bottom: 1em; /* Расстояние между элементами текста */
+    color: hsla(15, 55%, 25%, 1); /* Цвет текста с прозрачностью */
 }
 
 a {
-    color: #340202; /* Цвет ссылки */
-    text-decoration: none; /* Подчеркивание */
+    color: #340202; /* Цвет для ссылок */
+    text-decoration: none; /* Убирает подчеркивание */
 }
 
 a:hover {
-    color: #b53711; /* Цвет ссылки при наведении */
-    text-decoration: underline; /* Подчеркивание при наведении */
+    color: #b53711; /* Цвет при наведении */
+    text-decoration: underline; /* Подчеркнутый текст при наведении */
 }
 
 img {
-    border: 2px solid #331306;
-    border-radius: 10px;
-    width: 600px;
-    height: 400px;
-    margin-right: 100px; /* Отступ */
-    max-width: 100%; /* Предотвращение выхода изображения за границы */
-    max-height: 400px; /* Ограничение максимальной высоты */
-    max-width: 600px; /* Ограничение максимальной длины */
+    border: 2px solid #331306; 
+    border-radius: 0.625em; 
+    width: 37.5em; /* 600px */
+    height: 25em; /* 400px */
+    margin-right: 6.25em; /* 100px */
+    max-width: 100%; 
 }
 
 .sp {
     color: #cb703b;
     background-color: #f7e8c8;
-    padding: 10px; /* Внутренние отступы */
-    border: 1px solid #ecb576; /* Граница */
+    padding: 0.625em; /* Отступы вокруг текста */
+    border: 1px solid #ecb576;
     border-radius: 5px;
-    max-width: 100%; /* Ограничение максимальной ширины */
-    height: auto; /* Автоматическая высота на основе контента */
-    min-height: 60px; /* Минимальная высота */
+    max-width: 100%; /* Максимальная ширина */
+    min-height: 3.75em; /* Минимальная высота 60px  */
+}
+
+.flex-container {
+    display: flex; /* Включение Flexbox */
+    flex-wrap: wrap; /* Перенос элементов(текста) */
+    justify-content: flex-start; /* Распределяем пространство между элементами */
+    align-items: flex-start; /* Протягиваем элементы на одинаковую высоту */
+    width: 100%;
+    gap: 70px; /* Расстояние между элементами */
+    padding: 10px; /* Отступы вокруг */
+}
+
+.flex-item {
+    flex: 1 1 auto; 
+    max-width: 45%; /* Ограничение максимальной ширины */
+    box-sizing: border-box;
+    padding: 10px; /* Отступ внутри */
+    background-color: rgba(234, 196, 166, 0.3); /* Полупрозрачный фон */
+    border: 1px solid #ecb576; 
+    border-radius: 5px; 
+    text-align: justify; 
+}
+.flex-item img {
+    border: 2px solid #331306;
+    border-radius: 0.625em;
+    width: 37.5em; 
+    height: 25em; 
+    max-width: 100%; /* Предотвращаем выход за пределы блока */
+    object-fit: cover; /* Убирает искажение */
+    display: block;
+    margin: 0 auto; /* Изображение по центру */
 }
