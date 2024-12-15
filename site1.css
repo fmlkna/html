@@ -11,7 +11,7 @@ body {
     line-height: 1.6; /* Межстрочный интервал */
     text-align: justify; /* Выравнивание текста по ширине */
     overflow-x: hidden; /* Убираем горизонтальный скролл */
-    margin: 10px;
+    padding: 10px;
 }
 
 h1 {
@@ -40,52 +40,59 @@ a:hover {
     text-decoration: underline; /* Подчеркнутый текст при наведении */
 }
 
-img {
-    border: 2px solid #331306; 
-    border-radius: 0.625em; 
-    width: 37.5em; /* 600px */
-    height: 25em; /* 400px */
-    margin-right: 6.25em; /* 100px */
-    max-width: 100%; 
+img[loading="lazy"] {
+    opacity: 0.5; /* Первоначальная прозрачность */
+    transition: opacity 0.3s ease; /* Плавное отображение изображений */
 }
 
-.sp {
-    color: #cb703b;
-    background-color: #f7e8c8;
-    padding: 0.625em; /* Отступы вокруг текста */
-    border: 1px solid #ecb576;
-    border-radius: 5px;
-    max-width: 100%; /* Максимальная ширина */
-    min-height: 3.75em; /* Минимальная высота 60px  */
+img[loading="lazy"].loaded {
+    opacity: 1; /* Полное проявление при загрузке */
 }
 
 .flex-container {
     display: flex; /* Включение Flexbox */
-    flex-wrap: wrap; /* Перенос элементов(текста) */
-    justify-content: flex-start; /* Распределяем пространство между элементами */
-    align-items: flex-start; /* Протягиваем элементы на одинаковую высоту */
-    width: 100%;
-    gap: 70px; /* Расстояние между элементами */
+    justify-content: space-between; /* Равномерное распределение по горизонтали */
+    align-items: flex-start; /* элементы располагаются с начала флекс-контейнера, выравнивание по левому краю*/
+    gap: 20px; /* Расстояние между элементами */
     padding: 10px; /* Отступы вокруг */
+    flex-wrap: wrap; /* Перенос элементов при маленьком экране */
 }
 
 .flex-item {
-    flex: 1 1 auto; 
-    max-width: 45%; /* Ограничение максимальной ширины */
-    box-sizing: border-box;
-    padding: 10px; /* Отступ внутри */
-    background-color: rgba(234, 196, 166, 0.3); /* Полупрозрачный фон */
-    border: 1px solid #ecb576; 
-    border-radius: 5px; 
-    text-align: justify; 
+    flex: 1 1 auto; /* Элемент занимает доступное пространство, сохраняя пропорции */
+    box-sizing: border-box; /* Включает отступы и границы в общую ширину и высоту */
+    padding: 10px;
+    margin: 0 auto; /* Центрирует элемент по горизонтали */
 }
-.flex-item img {
+
+.flex-item figure {
+    display: flex;
+    flex-direction: column; /* Располагает элементы столбцом */
+    align-items: flex-start;
     border: 2px solid #331306;
     border-radius: 0.625em;
-    width: 37.5em; 
-    height: 25em; 
-    max-width: 100%; /* Предотвращаем выход за пределы блока */
-    object-fit: cover; /* Убирает искажение */
-    display: block;
-    margin: 0 auto; /* Изображение по центру */
+    width: 100%; /* Фигура занимает всю ширину родительского контейнера */
+    gap: 10px;
+}
+
+.flex-item img {
+    width: 100%; 
+    height: 25em; /* Фиксированная высота изображения */
+    padding: 10px; /* Отступ внутри вокруг картинки*/
+    background-color: rgba(234, 196, 166, 0.3); /* Полупрозрачный фон */
+    border: 2px solid #9e6728; 
+    border-radius: 0.625em; 
+    max-width: 40.5em; /* 600px */
+    object-fit: cover; /* Изображение заполняет контейнер, обрезая лишнее */
+}
+
+.flex-item figcaption {
+    color: #9e4f22;
+    background-color: #f2d097;
+    padding: 0.525em; /* Отступы вокруг текста */
+    border: 2px solid #654d30;
+    border-radius: 5px;
+    max-width: 40.5em;
+    width: 100%;
+    text-align: justify;
 }
