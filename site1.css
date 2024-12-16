@@ -21,6 +21,13 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 27px;
+    font-weight: 500;
+    text-align: left;
+    color: rgba(100, 29, 7, 0.895);
+}
+
 span {
     color: #d38c1b; /* Шестнадцатеричный цвет */
 }
@@ -31,13 +38,15 @@ p, li {
 }
 
 a {
-    color: #340202; /* Цвет для ссылок */
+    color: #be7901; /* Цвет для ссылок */
     text-decoration: none; /* Убирает подчеркивание */
+    text-shadow: 1px 1px 0 #211402; 
 }
 
 a:hover {
-    color: #b53711; /* Цвет при наведении */
+    color: #be7901; /* Цвет при наведении */
     text-decoration: underline; /* Подчеркнутый текст при наведении */
+    text-shadow: none;
 }
 
 img[loading="lazy"] {
@@ -67,7 +76,7 @@ img[loading="lazy"].loaded {
 
 .flex-item figure {
     display: flex;
-    flex-direction: column; /* Располагает элементы столбцом */
+    flex-direction: column; 
     align-items: flex-start;
     border: 2px solid #331306;
     border-radius: 0.625em;
@@ -95,4 +104,10 @@ img[loading="lazy"].loaded {
     max-width: 40.5em;
     width: 100%;
     text-align: justify;
+}
+
+footer {
+    background-color:  rgba(238, 199, 121, 0.3);
+    text-align: center;
+    padding: 10px 0;
 }

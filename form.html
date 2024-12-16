@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Verdana', sans-serif;
+            background-color: rgb(248, 238, 219); 
+            color: rgba(70, 25, 11, 0.895); 
+            text-align: center;
+        }
+        
+        main {
+            flex-grow: 1; /* Блок занимает всё оставшееся место */
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto; /* Центрует блок */
+            padding: 20px;
+            color: #7c5118;
+            border: 3px solid #553103;
+            border-radius: 5px;
+            background: #f9f9f9;
+            box-sizing: border-box; /* Учитывает padding */
+            padding-left: 20px; /* Отступ слева */
+            padding-right: 20px; /* Отступ справа */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px; /* Добавляет нижний отступ */
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Нижний отступ 15px между группами элементов формы */
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="password"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select {
+            width: 100%; 
+            padding: 15px;
+            margin-top: 5px; /* Отступ сверху */
+            border: 1px solid #472201;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 5px;  /* Добавляет промежуток между кружком радио-кнопки и текстом */
+        }
+
+        h3 {
+            font-size: 18px;
+            border-bottom: 1px solid #ccc; /* Добавляет нижнюю границу для визуального отделения */
+            padding-bottom: 5px; /* Добавляет отступ снизу для текста под линией */
+            color: #674531;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #542a04;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .form-group button:hover {
+            background-color: #bd5e05;
+        }
+
+        footer {
+            background-color: #775b37;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        a {
+            color: #b07a06;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Уфа - cтолица Башкортостана</h1>
+    <nav>
+        <a href="site1.html">Вернуться на главную</a>
+    </nav>
+</header>
+
+<main>
+    <div class="form-container">
+        <h2>Регистрация нового пользователя</h2>
+        <form action="#" method="post">
+            
+            <!-- Личная информация -->
+            <div class="form-section">
+                <h3>Личная информация</h3>
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" placeholder="Придумайте пароль" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Пол:</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Мужской</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Женский</label>
+                </div>
+            </div>
+
+            <!-- Контактные данные -->
+            <div class="form-section">
+                <h3>Контактные данные</h3>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" pattern="\+?[0-9\s\-\(\)]{10,15}" placeholder="Введите ваш номер" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred_time">Удобное время для связи:</label>
+                    <select id="preferred_time" name="preferred_time" required>
+                        <option value="morning">Утро</option>
+                        <option value="afternoon">День</option>
+                        <option value="evening">Вечер</option>
+                        <option value="night">Ночь</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Все права защищены. </p>
+</footer>
+
+</body>
+</html>
