@@ -32,9 +32,20 @@ span {
     color: #d38c1b; /* Шестнадцатеричный цвет */
 }
 
-p, li {
+p {
     margin-bottom: 1em; /* Расстояние между элементами текста */
     color: hsla(15, 55%, 25%, 1); /* Цвет текста с прозрачностью */
+}
+
+ul li:nth-child(even) { /* Чётные элементы */
+    background-color: #f1e3d6;
+    color: rgb(205, 129, 104);
+}
+
+
+ul li:nth-child(odd) { /* Нечётные элементы */
+    background-color: #e9d3b6;
+    color: hsla(15, 55%, 25%, 1);
 }
 
 a {
