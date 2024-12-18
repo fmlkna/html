@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Градиенты и Преобразования</title>
+  <style>
+        body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирует по горизонтали */
+        justify-content: center; /* Центрирует по вертикали */
+        gap: 20px;
+        }
+
+        .container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap; /* Переход на новую строку при нехватке места */
+        justify-content: center; /* Центрирует блоки внутри контейнера по горизонтали */
+        }
+
+        .box {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center; /* Центрирует текст по вертикали */
+        justify-content: center; /* Центрирует текст по горизонтали */
+        text-align: center; /* Выравнивает текст по центру */
+        font-size: 1em;
+        color: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease; /* Задает плавные переходы для трансформаций и тени */
+        }
+
+        .linear-gradient {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        }
+
+        .radial-gradient {
+        background: radial-gradient(circle, #ff7eb3, #ff758c);
+        }
+
+        .conic-gradient {
+        background: conic-gradient(from 180deg, #ff9d00, #e000ff, #ff9d00);
+        }
+
+        .rotate-2d {
+        background: linear-gradient(45deg, #42e695, #3bb2b8);
+        }
+
+        .rotate-2d:hover {
+        transform: rotate(20deg); /* Поворот блока на 20 градусов при наведении */
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .scale-2d {
+        background: radial-gradient(circle, #ff9966, #ff5e62);
+        }
+
+        .scale-2d:hover {
+        transform: scale(1.2); /* Увеличивает размер блока на 20% при наведении */
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25); /* Увеличенная тень при наведении */
+        }
+
+        .rotate-3d {
+        background: conic-gradient(from 90deg, #ffe259, #ffa751);
+        }
+
+        .rotate-3d:hover {
+        transform: rotateY(180deg); /* Поворот блока на 180 градусов по оси Y при наведении */
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .skew-3d {
+        background: linear-gradient(135deg, #84fab0, #8fd3f4);
+        }
+
+        .skew-3d:hover {
+        transform: skew(15deg, 15deg); /* Наклон блока при наведении */
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .transition-color {
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        transition: background-color 0.5s ease, transform 0.5s ease; /* Плавный переход цвета и трансформаций */
+        }
+
+        .transition-color:hover {
+        background: linear-gradient(to right, #a18cd1, #fbc2eb); /* Изменение цвета при наведении */
+        transform: translateY(-10px); /* Смещение блока вверх при наведении */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+        }
+
+        .transition-size {
+        background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+        transition: width 0.4s ease, height 0.4s ease; /* Плавное изменение размеров */
+        }
+
+        .transition-size:hover {
+        width: 220px;
+        height: 220px;
+        }
+
+  </style>
+<body>
+  <div class="container">
+    <div class="box linear-gradient">
+      <p>Линейный градиент</p>
+    </div>
+
+    <div class="box radial-gradient">
+      <p>Радиальный градиент</p>
+    </div>
+
+    <div class="box conic-gradient">
+      <p>Конический градиент</p>
+    </div>
+  </div>
+
+  <div class="container transformations">
+    <div class="box rotate-2d">
+      <p>Поворот (2D)</p>
+    </div>
+
+    <div class="box scale-2d">
+      <p>Масштаб (2D)</p>
+    </div>
+
+    <div class="box rotate-3d">
+      <p>Поворот (3D)</p>
+    </div>
+
+    <div class="box skew-3d">
+      <p>Наклон (3D)</p>
+    </div>
+
+    <div class="box transition-color">
+        <p>Transition цвета</p>
+    </div>
+    
+    <div class="box transition-size">
+    <p>Transition размера</p>
+    </div>
+  </div>
+</body>
+</html>

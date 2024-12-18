@@ -52,6 +52,7 @@ a {
     color: #be7901; /* Цвет для ссылок */
     text-decoration: none; /* Убирает подчеркивание */
     text-shadow: 1px 1px 0 #211402; 
+    transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
 a:hover {
@@ -73,16 +74,16 @@ img[loading="lazy"].loaded {
     display: flex; /* Включение Flexbox */
     justify-content: space-between; /* Равномерное распределение по горизонтали */
     align-items: flex-start; /* элементы располагаются с начала флекс-контейнера, выравнивание по левому краю*/
-    gap: 20px; /* Расстояние между элементами */
-    padding: 10px; /* Отступы вокруг */
+    gap: 10px; /* Расстояние между элементами */
     flex-wrap: wrap; /* Перенос элементов при маленьком экране */
 }
 
 .flex-item {
-    flex: 1 1 auto; /* Элемент занимает доступное пространство, сохраняя пропорции */
+    flex: 1 1 calc(33.333% - 20px); /* Элемент занимает доступное пространство, сохраняя пропорции */
     box-sizing: border-box; /* Включает отступы и границы в общую ширину и высоту */
-    padding: 10px;
+    padding: 5px;
     margin: 0 auto; /* Центрирует элемент по горизонтали */
+    position: relative;
 }
 
 .flex-item figure {
@@ -98,12 +99,81 @@ img[loading="lazy"].loaded {
 .flex-item img {
     width: 100%; 
     height: 25em; /* Фиксированная высота изображения */
-    padding: 10px; /* Отступ внутри вокруг картинки*/
+    padding: 5px; /* Отступ внутри вокруг картинки*/
     background-color: rgba(234, 196, 166, 0.3); /* Полупрозрачный фон */
     border: 2px solid #9e6728; 
     border-radius: 0.625em; 
     max-width: 40.5em; /* 600px */
     object-fit: cover; /* Изображение заполняет контейнер, обрезая лишнее */
+    transition: transform 0.3s ease; /* Добавлено плавное изменение */
+    display: block;
+}
+
+.new-card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(65, 37, 4, 0.2);
+    border-top: 4px solid #935207;
+    border-radius: 50%;
+    animation: spin 1s linear infinite, fade-out 4s forwards; /* Анимация исчезновения через 4 секунды */
+    z-index: 2; /* Лоадер над изображением */
+}
+
+@keyframes spin { /* Анимация вращения */
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fade-out { /* Анимация исчезновения лоадера */
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.content {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0; /* Изначально скрыто */
+    animation: fade-in 0.5s ease 4s forwards; /* Появляется через 4 секунды */
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fade-in { /* Анимация появления картинки */
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.content-caption {
+    opacity: 0; /* Скрыто изначально */
+    animation: fade-in 0.5s ease 4s forwards; /* Появление через 4 секунды */
+}
+
+.flex-item img:hover {
+    transform: scale(1.05); /* Увеличение изображения при наведении */
 }
 
 .flex-item figcaption {
@@ -114,6 +184,7 @@ img[loading="lazy"].loaded {
     border-radius: 5px;
     max-width: 40.5em;
     width: 100%;
+    height: auto;
     text-align: justify;
 }
 
