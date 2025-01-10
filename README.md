@@ -29,7 +29,7 @@
 |10|scroll-behavior:[auto, smooth]|определяет поведение прокрутки внутри элемента[стандартное, плавное]|[ILAR.PRO](https://ilartech.com/)|
 
 ### Структура сайта [RuNetSoft](https://softcreators.ru/)
-![Вид сайта](<image src="вид сайта.jpg">)
+![Вид сайта](https://github.com/fmlkna/html/blob/main/вид%20сайта.jpg)
 
 Первый уровень. - ```<!DOCTYPE html>``` Объявление типа документа.
 
