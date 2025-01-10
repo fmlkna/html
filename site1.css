@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Merienda';
     background-color: rgb(248, 238, 219); 
     color: rgba(70, 25, 11, 0.895); 
     font-size: 1rem; /* Относительные единицы для текста */
@@ -73,9 +73,8 @@ img[loading="lazy"].loaded {
 .flex-container {
     display: flex; /* Включение Flexbox */
     justify-content: space-between; /* Равномерное распределение по горизонтали */
-    align-items: flex-start; /* элементы располагаются с начала флекс-контейнера, выравнивание по левому краю*/
+    align-items: flex-start; /* элементы располагаются с начала флекс-контейнера, выравнивание по верхнему краю*/
     gap: 10px; /* Расстояние между элементами */
-    flex-wrap: wrap; /* Перенос элементов при маленьком экране */
 }
 
 .flex-item {
@@ -90,7 +89,7 @@ img[loading="lazy"].loaded {
     display: flex;
     flex-direction: column; 
     align-items: flex-start;
-    border: 2px solid #331306;
+    border: 2px dashed #331306;
     border-radius: 0.625em;
     width: 100%; /* Фигура занимает всю ширину родительского контейнера */
     gap: 10px;
@@ -101,7 +100,7 @@ img[loading="lazy"].loaded {
     height: 25em; /* Фиксированная высота изображения */
     padding: 5px; /* Отступ внутри вокруг картинки*/
     background-color: rgba(234, 196, 166, 0.3); /* Полупрозрачный фон */
-    border: 2px solid #9e6728; 
+    border: 2px dashed #9e6728; 
     border-radius: 0.625em; 
     max-width: 40.5em; /* 600px */
     object-fit: cover; /* Изображение заполняет контейнер, обрезая лишнее */
@@ -118,8 +117,8 @@ img[loading="lazy"].loaded {
 
 .loader {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
@@ -192,4 +191,5 @@ footer {
     background-color:  rgba(238, 199, 121, 0.3);
     text-align: center;
     padding: 10px 0;
+    width: 100%;
 }
